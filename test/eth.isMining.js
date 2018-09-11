@@ -1,7 +1,7 @@
 var testMethod = require('./helpers/test.method.js');
 
 var method = 'isMining';
-var call = 'eth_mining';
+var call = 'ess_mining';
 
 var tests = [{
     result: true,

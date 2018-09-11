@@ -6,12 +6,12 @@ var tests = [{
     args: ['newBlockHeaders'],
     firstResult: '0x1234',
     firstPayload: {
-        method: "eth_subscribe",
+        method: "ess_subscribe",
         params: ['newHeads']
     },
     secondResult: true,
     secondPayload: {
-        method: "eth_unsubscribe"
+        method: "ess_unsubscribe"
     },
     dataCount: 1,
     subscriptions: [{
@@ -62,12 +62,12 @@ var tests = [{
     args: ['pendingTransactions'],
     firstResult: '0x1234',
     firstPayload: {
-        method: "eth_subscribe",
+        method: "ess_subscribe",
         params: ['newPendingTransactions']
     },
     secondResult: true,
     secondPayload: {
-        method: "eth_unsubscribe"
+        method: "ess_unsubscribe"
     },
     dataCount: 1,
     subscriptions: [{
@@ -82,12 +82,12 @@ var tests = [{
     args: ['logs',{}],
     firstResult: '0x4444',
     firstPayload: {
-        method: "eth_subscribe",
+        method: "ess_subscribe",
         params: ['logs',{topics: []}]
     },
     secondResult: true,
     secondPayload: {
-        method: "eth_unsubscribe"
+        method: "ess_unsubscribe"
     },
     subscriptions: [{
         subscription: '0x4444',
@@ -125,12 +125,12 @@ var tests = [{
     args: ['logs',{address: ['0xDdf4d0A3c12e86b4B5f39B213f7E19d048276dAE','0xAaf4D0a3C12e86B4B5f39b213f7E19d048276daE']}],
     firstResult: '0x4444',
     firstPayload: {
-        method: "eth_subscribe",
+        method: "ess_subscribe",
         params: ['logs',{address: ['0xddf4d0a3c12e86b4b5f39b213f7e19d048276dae','0xaaf4d0a3c12e86b4b5f39b213f7e19d048276dae'], topics: []}]
     },
     secondResult: true,
     secondPayload: {
-        method: "eth_unsubscribe"
+        method: "ess_unsubscribe"
     },
     subscriptions: [{
         subscription: '0x4444',
@@ -168,12 +168,12 @@ var tests = [{
         args: ['logs',{address: ['0xDdf4d0A3c12e86b4B5f39B213f7E19d048276dAE','0xAaf4D0a3C12e86B4B5f39b213f7E19d048276daE']}],
         firstResult: '0x4444',
         firstPayload: {
-            method: "eth_subscribe",
+            method: "ess_subscribe",
             params: ['logs',{address: ['0xddf4d0a3c12e86b4b5f39b213f7e19d048276dae','0xaaf4d0a3c12e86b4b5f39b213f7e19d048276dae'], topics: []}]
         },
         secondResult: true,
         secondPayload: {
-            method: "eth_unsubscribe"
+            method: "ess_unsubscribe"
         },
         subscriptions: [{
             subscription: '0x4444',
@@ -236,12 +236,12 @@ var tests = [{
     args: ['logs',{address: ['0xDdf4d0A3c12e86b4B5f39B213f7E19d048276dAE','0xAaf4D0a3C12e86B4B5f39b213f7E19d048276daE']}],
     firstResult: '0x4444',
     firstPayload: {
-        method: "eth_subscribe",
+        method: "ess_subscribe",
         params: ['logs',{address: ['0xddf4d0a3c12e86b4b5f39b213f7e19d048276dae','0xaaf4d0a3c12e86b4b5f39b213f7e19d048276dae'], topics: []}]
     },
     secondResult: true,
     secondPayload: {
-        method: "eth_unsubscribe"
+        method: "ess_unsubscribe"
     },
     subscriptions: [{
         subscription: '0x4444',
@@ -304,12 +304,12 @@ var tests = [{
     args: ['logs',{address: '0x11f4d0A3c12e86B4b5F39B213F7E19D048276DAe', topics: ['0x23']}], // checksum address
     firstResult: '0x555',
     firstPayload: {
-        method: "eth_subscribe",
+        method: "ess_subscribe",
         params: ['logs',{address: '0x11f4d0a3c12e86b4b5f39b213f7e19d048276dae', topics: ['0x23']}]
     },
     secondResult: true,
     secondPayload: {
-        method: "eth_unsubscribe"
+        method: "ess_unsubscribe"
     },
     dataCount: 1,
     subscriptions: [{
@@ -348,12 +348,12 @@ var tests = [{
     args: ['logs',{address: '0x11f4d0a3c12e86b4b5f39b213f7e19d048276dae', topics: ['0x23']}],
     firstResult: '0x5556666',
     firstPayload: {
-        method: "eth_subscribe",
+        method: "ess_subscribe",
         params: ['logs',{address: '0x11f4d0a3c12e86b4b5f39b213f7e19d048276dae', topics: ['0x23']}]
     },
     secondResult: true,
     secondPayload: {
-        method: "eth_unsubscribe"
+        method: "ess_unsubscribe"
     },
     dataCount: 1,
     changedCount: 1,
@@ -424,12 +424,12 @@ var tests = [{
     args: ['syncing'],
     firstResult: '0x666666',
     firstPayload: {
-        method: "eth_subscribe",
+        method: "ess_subscribe",
         params: ['syncing']
     },
     secondResult: true,
     secondPayload: {
-        method: "eth_unsubscribe"
+        method: "ess_unsubscribe"
     },
     dataCount: 2,
     changedCount: 2,

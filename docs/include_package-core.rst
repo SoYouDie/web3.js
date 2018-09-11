@@ -251,13 +251,13 @@ Example
         property: 'myModule',
         methods: [{
             name: 'getBalance',
-            call: 'eth_getBalance',
+            call: 'ess_getBalance',
             params: 2,
             inputFormatter: [web3.extend.formatters.inputAddressFormatter, web3.extend.formatters.inputDefaultBlockNumberFormatter],
             outputFormatter: web3.utils.hexToNumberString
         },{
             name: 'getGasPriceSuperFunction',
-            call: 'eth_gasPriceSuper',
+            call: 'ess_gasPriceSuper',
             params: 2,
             inputFormatter: [null, web3.utils.numberToHex]
         }]
@@ -266,7 +266,7 @@ Example
     web3.extend({
         methods: [{
             name: 'directCall',
-            call: 'eth_callForFun',
+            call: 'ess_callForFun',
         }]
     });
 

@@ -209,14 +209,14 @@ Method.prototype._confirmTransaction = function (defer, result, payload) {
     var _ethereumCalls = [
         new Method({
             name: 'getTransactionReceipt',
-            call: 'eth_getTransactionReceipt',
+            call: 'ess_getTransactionReceipt',
             params: 1,
             inputFormatter: [null],
             outputFormatter: formatters.outputTransactionReceiptFormatter
         }),
         new Method({
             name: 'getCode',
-            call: 'eth_getCode',
+            call: 'ess_getCode',
             params: 2,
             inputFormatter: [formatters.inputAddressFormatter, formatters.inputDefaultBlockNumberFormatter]
         }),
@@ -459,7 +459,7 @@ var getWallet = function(from, accounts) {
 
 Method.prototype.buildCall = function() {
     var method = this,
-        isSendTx = (method.call === 'eth_sendTransaction' || method.call === 'eth_sendRawTransaction'); // || method.call === 'personal_sendTransaction'
+        isSendTx = (method.call === 'ess_sendTransaction' || method.call === 'ess_sendRawTransaction'); // || method.call === 'personal_sendTransaction'
 
     // actual send function
     var send = function () {
@@ -512,7 +512,7 @@ Method.prototype.buildCall = function() {
         var sendSignedTx = function(sign){
 
             var signedPayload = _.extend({}, payload, {
-                method: 'eth_sendRawTransaction',
+                method: 'ess_sendRawTransaction',
                 params: [sign.rawTransaction]
             });
 
@@ -525,8 +525,8 @@ Method.prototype.buildCall = function() {
             if (method && method.accounts && method.accounts.wallet && method.accounts.wallet.length) {
                 var wallet;
 
-                // ETH_SENDTRANSACTION
-                if (payload.method === 'eth_sendTransaction') {
+                // ess_SENDTRANSACTION
+                if (payload.method === 'ess_sendTransaction') {
                     var tx = payload.params[0];
                     wallet = getWallet((_.isObject(tx)) ? tx.from : null, method.accounts);
 
@@ -536,8 +536,8 @@ Method.prototype.buildCall = function() {
                         return method.accounts.signTransaction(_.omit(tx, 'from'), wallet.privateKey).then(sendSignedTx);
                     }
 
-                    // ETH_SIGN
-                } else if (payload.method === 'eth_sign') {
+                    // ess_SIGN
+                } else if (payload.method === 'ess_sign') {
                     var data = payload.params[1];
                     wallet = getWallet(payload.params[0], method.accounts);
 
@@ -565,7 +565,7 @@ Method.prototype.buildCall = function() {
 
             var getGasPrice = (new Method({
                 name: 'getGasPrice',
-                call: 'eth_gasPrice',
+                call: 'ess_gasPrice',
                 params: 0
             })).createFunction(method.requestManager);
 

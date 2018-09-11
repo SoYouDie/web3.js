@@ -19,7 +19,7 @@ describe('ens', function () {
             });
             provider.injectValidation(function (payload) {
                 assert.equal(payload.jsonrpc, '2.0');
-                assert.equal(payload.method, 'eth_getBlockByNumber');
+                assert.equal(payload.method, 'ess_getBlockByNumber');
                 assert.deepEqual(payload.params, ['latest', false]);
             });
 
@@ -37,7 +37,7 @@ describe('ens', function () {
 
             provider.injectValidation(function (payload) {
                 assert.equal(payload.jsonrpc, '2.0');
-                assert.equal(payload.method, 'eth_getBlockByNumber');
+                assert.equal(payload.method, 'ess_getBlockByNumber');
                 assert.deepEqual(payload.params, ['0x0', false]);
             });
         });
@@ -47,7 +47,7 @@ describe('ens', function () {
 
             provider.injectValidation(function (payload) {
                 assert.equal(payload.jsonrpc, '2.0');
-                assert.equal(payload.method, 'eth_call');
+                assert.equal(payload.method, 'ess_call');
                 assert.deepEqual(payload.params, [{
                     data: sha3(signature).slice(0, 10) + '1757b5941987904c18c7594de32c1726cda093fdddacb738cfbc4a7cd1ef4370',
                     to: '0x314159265dd8dbb310642f98f50c066173c1259b',
@@ -69,7 +69,7 @@ describe('ens', function () {
 
             provider.injectValidation(function (payload) {
                 assert.equal(payload.jsonrpc, '2.0');
-                assert.equal(payload.method, 'eth_call');
+                assert.equal(payload.method, 'ess_call');
                 assert.deepEqual(payload.params, [{
                     data: sha3(signature).slice(0, 10) + '1757b5941987904c18c7594de32c1726cda093fdddacb738cfbc4a7cd1ef4370',
                     to: '0x314159265dd8dbb310642f98f50c066173c1259b',
@@ -91,7 +91,7 @@ describe('ens', function () {
 
             provider.injectValidation(function (payload) {
                 assert.equal(payload.jsonrpc, '2.0');
-                assert.equal(payload.method, 'eth_call');
+                assert.equal(payload.method, 'ess_call');
                 assert.deepEqual(payload.params, [{
                     data: sha3(resolverSig).slice(0, 10) + '1757b5941987904c18c7594de32c1726cda093fdddacb738cfbc4a7cd1ef4370',
                     to: '0x314159265dd8dbb310642f98f50c066173c1259b',
@@ -101,7 +101,7 @@ describe('ens', function () {
 
             provider.injectValidation(function (payload) {
                 assert.equal(payload.jsonrpc, '2.0');
-                assert.equal(payload.method, 'eth_call');
+                assert.equal(payload.method, 'ess_call');
                 assert.deepEqual(payload.params, [{
                     data: sha3(addrSig).slice(0, 10) + '1757b5941987904c18c7594de32c1726cda093fdddacb738cfbc4a7cd1ef4370',
                     to: '0x0123456701234567012345670123456701234567',
@@ -123,7 +123,7 @@ describe('ens', function () {
 
             provider.injectValidation(function (payload) {
                 assert.equal(payload.jsonrpc, '2.0');
-                assert.equal(payload.method, 'eth_call');
+                assert.equal(payload.method, 'ess_call');
                 assert.deepEqual(payload.params, [{
                     data: sha3(resolverSignature).slice(0, 10) + '1757b5941987904c18c7594de32c1726cda093fdddacb738cfbc4a7cd1ef4370',
                     to: '0x314159265dd8dbb310642f98f50c066173c1259b',
@@ -133,7 +133,7 @@ describe('ens', function () {
 
             provider.injectValidation(function (payload) {
                 assert.equal(payload.jsonrpc, '2.0');
-                assert.equal(payload.method, 'eth_call');
+                assert.equal(payload.method, 'ess_call');
                 assert.deepEqual(payload.params, [{
                     data: sha3(pubkeySignature).slice(0, 10) + '1757b5941987904c18c7594de32c1726cda093fdddacb738cfbc4a7cd1ef4370',
                     to: '0x0123456701234567012345670123456701234567',
@@ -159,7 +159,7 @@ describe('ens', function () {
 
             provider.injectValidation(function (payload) {
                 assert.equal(payload.jsonrpc, '2.0');
-                assert.equal(payload.method, 'eth_call');
+                assert.equal(payload.method, 'ess_call');
                 assert.deepEqual(payload.params, [{
                     data: sha3(resolverSignature).slice(0, 10) + '1757b5941987904c18c7594de32c1726cda093fdddacb738cfbc4a7cd1ef4370',
                     to: '0x314159265dd8dbb310642f98f50c066173c1259b',
@@ -169,7 +169,7 @@ describe('ens', function () {
 
             provider.injectValidation(function (payload) {
                 assert.equal(payload.jsonrpc, '2.0');
-                assert.equal(payload.method, 'eth_call');
+                assert.equal(payload.method, 'ess_call');
                 assert.deepEqual(payload.params, [{
                     data: sha3(contentSignature).slice(0, 10) + '1757b5941987904c18c7594de32c1726cda093fdddacb738cfbc4a7cd1ef4370',
                     to: '0x0123456701234567012345670123456701234567',
@@ -195,7 +195,7 @@ describe('ens', function () {
         });
         provider.injectValidation(function (payload) {
             assert.equal(payload.jsonrpc, '2.0');
-            assert.equal(payload.method, 'eth_getBlockByNumber');
+            assert.equal(payload.method, 'ess_getBlockByNumber');
             assert.deepEqual(payload.params, ['latest', false]);
         });
 
@@ -212,7 +212,7 @@ describe('ens', function () {
         });
         provider.injectValidation(function (payload) {
             assert.equal(payload.jsonrpc, '2.0');
-            assert.equal(payload.method, 'eth_getBlockByNumber');
+            assert.equal(payload.method, 'ess_getBlockByNumber');
             assert.deepEqual(payload.params, ['0x0', false]);
         });
 
@@ -234,7 +234,7 @@ describe('ens', function () {
         });
         provider.injectValidation(function (payload) {
             assert.equal(payload.jsonrpc, '2.0');
-            assert.equal(payload.method, 'eth_getBlockByNumber');
+            assert.equal(payload.method, 'ess_getBlockByNumber');
             assert.deepEqual(payload.params, ['latest', false]);
         });
 

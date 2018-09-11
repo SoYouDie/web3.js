@@ -15,7 +15,7 @@ describe('lib/web3/method', function () {
             var eth = new Eth(provider);
             var method = new Method({
                 name: 'call',
-                call: 'eth_call',
+                call: 'ess_call',
                 params: 2,
                 inputFormatter: [formatters.inputCallFormatter, formatters.inputDefaultBlockNumberFormatter.bind({defaultBlock: 'latest'})]
             });
@@ -26,7 +26,7 @@ describe('lib/web3/method', function () {
 
             // add results
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_call');
+                assert.equal(payload.method, 'ess_call');
                 assert.deepEqual(payload.params, [{
                     from: '0x11f4d0a3c12e86b4b5f39b213f7e19d048276dae',
                     to: '0x11f4d0a3c12e86b4b5f39b213f7e19d048276dae',
@@ -52,7 +52,7 @@ describe('lib/web3/method', function () {
             var eth = new Eth(provider);
             var method = new Method({
                 name: 'call',
-                call: 'eth_call',
+                call: 'ess_call',
                 params: 2,
                 inputFormatter: [formatters.inputCallFormatter, formatters.inputDefaultBlockNumberFormatter.bind({defaultBlock: 'latest'})]
             });
@@ -63,7 +63,7 @@ describe('lib/web3/method', function () {
 
             // add results
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_call');
+                assert.equal(payload.method, 'ess_call');
                 assert.deepEqual(payload.params, [{
                     from: '0x11f4d0a3c12e86b4b5f39b213f7e19d048276dae',
                     to: '0x11f4d0a3c12e86b4b5f39b213f7e19d048276dae',
@@ -97,7 +97,7 @@ describe('lib/web3/method', function () {
             var eth = new Eth(provider);
             var method = new Method({
                 name: 'call',
-                call: 'eth_call',
+                call: 'ess_call',
                 params: 2,
                 inputFormatter: [formatters.inputCallFormatter, formatters.inputDefaultBlockNumberFormatter.bind({defaultBlock: 'latest'})],
                 outputFormatter: function (result) {
@@ -111,7 +111,7 @@ describe('lib/web3/method', function () {
 
             // add results
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_call');
+                assert.equal(payload.method, 'ess_call');
                 assert.deepEqual(payload.params, [{
                     from: '0x11f4d0a3c12e86b4b5f39b213f7e19d048276dae',
                     to: '0x11f4d0a3c12e86b4b5f39b213f7e19d048276dae',
@@ -139,7 +139,7 @@ describe('lib/web3/method', function () {
             var eth = new Eth(provider);
             var method = new Method({
                 name: 'call',
-                call: 'eth_call',
+                call: 'ess_call',
                 params: 2,
                 inputFormatter: [formatters.inputCallFormatter, formatters.inputDefaultBlockNumberFormatter.bind({defaultBlock: 'latest'})],
                 outputFormatter: function (result) {
@@ -153,7 +153,7 @@ describe('lib/web3/method', function () {
 
             // add results
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_call');
+                assert.equal(payload.method, 'ess_call');
                 assert.deepEqual(payload.params, [{
                     from: '0x11f4d0a3c12e86b4b5f39b213f7e19d048276dae',
                     to: '0x11f4d0a3c12e86b4b5f39b213f7e19d048276dae',
@@ -181,7 +181,7 @@ describe('lib/web3/method', function () {
             var eth = new Eth(provider);
             var method = new Method({
                 name: 'sendTransaction',
-                call: 'eth_sendTransaction',
+                call: 'ess_sendTransaction',
                 params: 1,
                 inputFormatter: [formatters.inputTransactionFormatter]
             });
@@ -192,13 +192,13 @@ describe('lib/web3/method', function () {
 
             // add results
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_gasPrice');
+                assert.equal(payload.method, 'ess_gasPrice');
                 assert.deepEqual(payload.params, []);
             });
             provider.injectResult('0xffffdddd'); // gas price
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_sendTransaction');
+                assert.equal(payload.method, 'ess_sendTransaction');
                 assert.deepEqual(payload.params, [{
                     from: '0x11f4d0a3c12e86b4b5f39b213f7e19d048276dae',
                     to: '0x11f4d0a3c12e86b4b5f39b213f7e19d048276dae',
@@ -224,7 +224,7 @@ describe('lib/web3/method', function () {
             var eth = new Eth(provider);
             var method = new Method({
                 name: 'sendTransaction',
-                call: 'eth_sendTransaction',
+                call: 'ess_sendTransaction',
                 params: 1,
                 inputFormatter: [formatters.inputTransactionFormatter]
             });
@@ -235,7 +235,7 @@ describe('lib/web3/method', function () {
 
             // add results
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_sendTransaction');
+                assert.equal(payload.method, 'ess_sendTransaction');
                 assert.deepEqual(payload.params, [{
                     from: '0x11f4d0a3c12e86b4b5f39b213f7e19d048276dae',
                     to: '0x11f4d0a3c12e86b4b5f39b213f7e19d048276dae',
@@ -246,19 +246,19 @@ describe('lib/web3/method', function () {
             provider.injectResult('0x1234567453543456321456321'); // tx hash
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_getTransactionReceipt');
+                assert.equal(payload.method, 'ess_getTransactionReceipt');
             });
             provider.injectResult(null);
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_subscribe');
+                assert.equal(payload.method, 'ess_subscribe');
                 assert.deepEqual(payload.params, ['newHeads']);
             });
             provider.injectResult('0x1234567'); // subscription id
 
             // fake newBlock
             provider.injectNotification({
-                method: 'eth_subscription',
+                method: 'ess_subscription',
                 params: {
                     subscription: '0x1234567',
                     result: {
@@ -269,7 +269,7 @@ describe('lib/web3/method', function () {
 
             // receipt
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_getTransactionReceipt');
+                assert.equal(payload.method, 'ess_getTransactionReceipt');
                 assert.deepEqual(payload.params, ['0x1234567453543456321456321']);
             });
             provider.injectResult({
@@ -282,7 +282,7 @@ describe('lib/web3/method', function () {
             });
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_unsubscribe');
+                assert.equal(payload.method, 'ess_unsubscribe');
                 assert.deepEqual(payload.params, ['0x1234567']);
             });
             provider.injectResult(true); // unsubscribe result
@@ -347,7 +347,7 @@ describe('lib/web3/method', function () {
             var eth = new Eth(provider);
             var method = new Method({
                 name: 'sendTransaction',
-                call: 'eth_sendTransaction',
+                call: 'ess_sendTransaction',
                 params: 1,
                 inputFormatter: [formatters.inputTransactionFormatter]
             });
@@ -358,7 +358,7 @@ describe('lib/web3/method', function () {
 
             // add results
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_sendTransaction');
+                assert.equal(payload.method, 'ess_sendTransaction');
                 assert.deepEqual(payload.params, [{
                     from: '0x11f4d0a3c12e86b4b5f39b213f7e19d048276dae',
                     data: '0xa123456',
@@ -368,19 +368,19 @@ describe('lib/web3/method', function () {
             provider.injectResult('0x1234567453543456321456321'); // tx hash
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_getTransactionReceipt');
+                assert.equal(payload.method, 'ess_getTransactionReceipt');
             });
             provider.injectResult(null);
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_subscribe');
+                assert.equal(payload.method, 'ess_subscribe');
                 assert.deepEqual(payload.params, ['newHeads']);
             });
             provider.injectResult('0x1234567'); // subscription id
 
             // fake newBlock
             provider.injectNotification({
-                method: 'eth_subscription',
+                method: 'ess_subscription',
                 params: {
                     subscription: '0x1234567',
                     result: {
@@ -390,7 +390,7 @@ describe('lib/web3/method', function () {
             });
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_getTransactionReceipt');
+                assert.equal(payload.method, 'ess_getTransactionReceipt');
                 assert.deepEqual(payload.params, ['0x1234567453543456321456321']);
             });
             // receipt
@@ -403,7 +403,7 @@ describe('lib/web3/method', function () {
                 gasUsed: '0x0'
             });
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_getCode');
+                assert.equal(payload.method, 'ess_getCode');
                 assert.deepEqual(payload.params, [address, 'latest']);
             });
             // code result
@@ -465,7 +465,7 @@ describe('lib/web3/method', function () {
             var eth = new Eth(provider);
             var method = new Method({
                 name: 'sendTransaction',
-                call: 'eth_sendTransaction',
+                call: 'ess_sendTransaction',
                 params: 1,
                 inputFormatter: [formatters.inputTransactionFormatter]
             });
@@ -476,7 +476,7 @@ describe('lib/web3/method', function () {
 
             // add results
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_sendTransaction');
+                assert.equal(payload.method, 'ess_sendTransaction');
                 assert.deepEqual(payload.params, [{
                     from: '0x11f4d0a3c12e86b4b5f39b213f7e19d048276dae',
                     data: '0xa123456',
@@ -486,19 +486,19 @@ describe('lib/web3/method', function () {
             provider.injectResult('0x1234567453543456321456321'); // tx hash
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_getTransactionReceipt');
+                assert.equal(payload.method, 'ess_getTransactionReceipt');
             });
             provider.injectResult(null);
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_subscribe');
+                assert.equal(payload.method, 'ess_subscribe');
                 assert.deepEqual(payload.params, ['newHeads']);
             });
             provider.injectResult('0x1234567'); // subscription id
 
             // fake newBlock
             provider.injectNotification({
-                method: 'eth_subscription',
+                method: 'ess_subscription',
                 params: {
                     subscription: '0x1234567',
                     result: {
@@ -508,7 +508,7 @@ describe('lib/web3/method', function () {
             });
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_getTransactionReceipt');
+                assert.equal(payload.method, 'ess_getTransactionReceipt');
                 assert.deepEqual(payload.params, ['0x1234567453543456321456321']);
             });
             // receipt
@@ -521,7 +521,7 @@ describe('lib/web3/method', function () {
                 gasUsed: '0x0'
             });
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_getCode');
+                assert.equal(payload.method, 'ess_getCode');
                 assert.deepEqual(payload.params, [address, 'latest']);
             });
             // code result
@@ -565,7 +565,7 @@ describe('lib/web3/method', function () {
             var eth = new Eth(provider);
             var method = new Method({
                 name: 'sendTransaction',
-                call: 'eth_sendTransaction',
+                call: 'ess_sendTransaction',
                 params: 1,
                 inputFormatter: [formatters.inputTransactionFormatter]
             });
@@ -576,7 +576,7 @@ describe('lib/web3/method', function () {
 
             // add results
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_sendTransaction');
+                assert.equal(payload.method, 'ess_sendTransaction');
                 assert.deepEqual(payload.params, [{
                     from: '0x11f4d0a3c12e86b4b5f39b213f7e19d048276dae',
                     data: '0xa123456',
@@ -586,19 +586,19 @@ describe('lib/web3/method', function () {
             provider.injectResult('0x1234567453543456321456321'); // tx hash
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_getTransactionReceipt');
+                assert.equal(payload.method, 'ess_getTransactionReceipt');
             });
             provider.injectResult(null);
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_subscribe');
+                assert.equal(payload.method, 'ess_subscribe');
                 assert.deepEqual(payload.params, ['newHeads']);
             });
             provider.injectResult('0x1234567'); // subscription id
 
             // fake newBlock
             provider.injectNotification({
-                method: 'eth_subscription',
+                method: 'ess_subscription',
                 params: {
                     subscription: '0x1234567',
                     result: {
@@ -608,7 +608,7 @@ describe('lib/web3/method', function () {
             });
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_getTransactionReceipt');
+                assert.equal(payload.method, 'ess_getTransactionReceipt');
                 assert.deepEqual(payload.params, ['0x1234567453543456321456321']);
             });
             // receipt
@@ -621,7 +621,7 @@ describe('lib/web3/method', function () {
                 gasUsed: '0x0'
             });
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_unsubscribe');
+                assert.equal(payload.method, 'ess_unsubscribe');
                 assert.deepEqual(payload.params, ['0x1234567']);
             });
             // code result
@@ -665,7 +665,7 @@ describe('lib/web3/method', function () {
             var eth = new Eth(provider);
             var method = new Method({
                 name: 'sendTransaction',
-                call: 'eth_sendTransaction',
+                call: 'ess_sendTransaction',
                 params: 1,
                 inputFormatter: [formatters.inputTransactionFormatter]
             });
@@ -676,7 +676,7 @@ describe('lib/web3/method', function () {
 
             // add results
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_sendTransaction');
+                assert.equal(payload.method, 'ess_sendTransaction');
                 assert.deepEqual(payload.params, [{
                     from: '0x11f4d0a3c12e86b4b5f39b213f7e19d048276dae',
                     data: '0xa123456',
@@ -686,12 +686,12 @@ describe('lib/web3/method', function () {
             provider.injectResult('0x1234567453543456321456321'); // tx hash
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_getTransactionReceipt');
+                assert.equal(payload.method, 'ess_getTransactionReceipt');
             });
             provider.injectResult(null);
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_subscribe');
+                assert.equal(payload.method, 'ess_subscribe');
                 assert.deepEqual(payload.params, ['newHeads']);
             });
             provider.injectResult('0x1234567'); // subscription id
@@ -700,7 +700,7 @@ describe('lib/web3/method', function () {
             for (i = 0; i < 51; i++) {
                 setTimeout(function () {
                     provider.injectNotification({
-                        method: 'eth_subscription',
+                        method: 'ess_subscription',
                         params: {
                             subscription: '0x1234567',
                             result: {
@@ -715,7 +715,7 @@ describe('lib/web3/method', function () {
             }
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_getTransactionReceipt');
+                assert.equal(payload.method, 'ess_getTransactionReceipt');
                 assert.deepEqual(payload.params, ['0x1234567453543456321456321']);
             });
 
@@ -754,7 +754,7 @@ describe('lib/web3/method', function () {
             var eth = new Eth(provider);
             var method = new Method({
                 name: 'sendTransaction',
-                call: 'eth_sendTransaction',
+                call: 'ess_sendTransaction',
                 params: 1,
                 inputFormatter: [formatters.inputTransactionFormatter]
             });
@@ -765,7 +765,7 @@ describe('lib/web3/method', function () {
 
             // add results
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_sendTransaction');
+                assert.equal(payload.method, 'ess_sendTransaction');
                 assert.deepEqual(payload.params, [{
                     from: '0x11f4d0a3c12e86b4b5f39b213f7e19d048276dae',
                     to: '0x11f4d0a3c12e86b4b5f39b213f7e19d048276dae',
@@ -775,12 +775,12 @@ describe('lib/web3/method', function () {
             provider.injectResult('0x1234567453543456321456321'); // tx hash
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_getTransactionReceipt');
+                assert.equal(payload.method, 'ess_getTransactionReceipt');
             });
             provider.injectResult(null);
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_subscribe');
+                assert.equal(payload.method, 'ess_subscribe');
                 assert.deepEqual(payload.params, ['newHeads']);
             });
             provider.injectResult('0x1234567'); // subscription id
@@ -790,7 +790,7 @@ describe('lib/web3/method', function () {
 
                 setTimeout(function () {
                     provider.injectNotification({
-                        method: 'eth_subscription',
+                        method: 'ess_subscription',
                         params: {
                             subscription: '0x1234567',
                             result: {
@@ -812,7 +812,7 @@ describe('lib/web3/method', function () {
             }
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_getTransactionReceipt');
+                assert.equal(payload.method, 'ess_getTransactionReceipt');
                 assert.deepEqual(payload.params, ['0x1234567453543456321456321']);
             });
 

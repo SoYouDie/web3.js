@@ -62,7 +62,7 @@ var tests = [{
     formattedArgs: ['0xd6960376d6c6dea93647383ffb245cfced97ccc5c7525397a543a72fdaea5265'],
     result: txResult,
     formattedResult: formattedTxResult,
-    call: 'eth_'+ method
+    call: 'ess_'+ method
 },{
     args: ['0xff960376d6c6dea93647383ffb245cfced97ccc5c7525397a543a72fdaea5265'],
     formattedArgs: ['0xff960376d6c6dea93647383ffb245cfced97ccc5c7525397a543a72fdaea5265'],
@@ -86,7 +86,7 @@ var tests = [{
         "cumulativeGasUsed": 520464,
         "gasUsed": 520464,
     },
-    call: 'eth_'+ method
+    call: 'ess_'+ method
 },{
     args: ['0xdd960376d6c6dea93647383ffb245cfced97ccc5c7525397a543a72fdaea5265'],
     formattedArgs: ['0xdd960376d6c6dea93647383ffb245cfced97ccc5c7525397a543a72fdaea5265'],
@@ -110,7 +110,7 @@ var tests = [{
         "cumulativeGasUsed": 520464,
         "gasUsed": 520464,
     },
-    call: 'eth_'+ method
+    call: 'ess_'+ method
 }];
 
 

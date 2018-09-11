@@ -7,7 +7,7 @@ var tests = [{
     formattedArgs: [],
     result: true,
     formattedResult: true,
-    call: 'eth_'+ method
+    call: 'ess_'+ method
 }];
 
 testMethod.runTests('eth', method, tests);

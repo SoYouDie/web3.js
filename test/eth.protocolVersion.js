@@ -1,7 +1,7 @@
 var testMethod = require('./helpers/test.method.js');
 
 var method = 'getProtocolVersion';
-var call = 'eth_protocolVersion';
+var call = 'ess_protocolVersion';
 
 var tests = [{
     result: '12345',

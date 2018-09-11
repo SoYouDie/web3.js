@@ -5,12 +5,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+
     <title>setProvider &#8212; web3.js 1.0.0 documentation</title>
-    
+
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
+
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="top" title="web3.js 1.0.0 documentation" href="index.html" /> 
+    <link rel="top" title="web3.js 1.0.0 documentation" href="index.html" />
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -34,15 +34,15 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">web3.js 1.0.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">web3.js 1.0.0 documentation</a> &#187;</li>
       </ul>
-    </div>  
+    </div>
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
           <div class="body" role="main">
-            
+
   <div class="section" id="setprovider">
 <h1>setProvider<a class="headerlink" href="#setprovider" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">web3</span><span class="p">.</span><span class="nx">setProvider</span><span class="p">(</span><span class="nx">myProvider</span><span class="p">)</span>
@@ -258,13 +258,13 @@ Will return the given provider by the (browser) environment, otherwise <code cla
     <span class="nx">property</span><span class="o">:</span> <span class="s1">&#39;myModule&#39;</span><span class="p">,</span>
     <span class="nx">methods</span><span class="o">:</span> <span class="p">[{</span>
         <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;getBalance&#39;</span><span class="p">,</span>
-        <span class="nx">call</span><span class="o">:</span> <span class="s1">&#39;eth_getBalance&#39;</span><span class="p">,</span>
+        <span class="nx">call</span><span class="o">:</span> <span class="s1">&#39;ess_getBalance&#39;</span><span class="p">,</span>
         <span class="nx">params</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
         <span class="nx">inputFormatter</span><span class="o">:</span> <span class="p">[</span><span class="nx">web3</span><span class="p">.</span><span class="nx">extend</span><span class="p">.</span><span class="nx">formatters</span><span class="p">.</span><span class="nx">inputAddressFormatter</span><span class="p">,</span> <span class="nx">web3</span><span class="p">.</span><span class="nx">extend</span><span class="p">.</span><span class="nx">formatters</span><span class="p">.</span><span class="nx">inputDefaultBlockNumberFormatter</span><span class="p">],</span>
         <span class="nx">outputFormatter</span><span class="o">:</span> <span class="nx">web3</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">hexToNumberString</span>
     <span class="p">},{</span>
         <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;getGasPriceSuperFunction&#39;</span><span class="p">,</span>
-        <span class="nx">call</span><span class="o">:</span> <span class="s1">&#39;eth_gasPriceSuper&#39;</span><span class="p">,</span>
+        <span class="nx">call</span><span class="o">:</span> <span class="s1">&#39;ess_gasPriceSuper&#39;</span><span class="p">,</span>
         <span class="nx">params</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
         <span class="nx">inputFormatter</span><span class="o">:</span> <span class="p">[</span><span class="kc">null</span><span class="p">,</span> <span class="nx">web3</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">numberToHex</span><span class="p">]</span>
     <span class="p">}]</span>
@@ -273,7 +273,7 @@ Will return the given provider by the (browser) environment, otherwise <code cla
 <span class="nx">web3</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
     <span class="nx">methods</span><span class="o">:</span> <span class="p">[{</span>
         <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;directCall&#39;</span><span class="p">,</span>
-        <span class="nx">call</span><span class="o">:</span> <span class="s1">&#39;eth_callForFun&#39;</span><span class="p">,</span>
+        <span class="nx">call</span><span class="o">:</span> <span class="s1">&#39;ess_callForFun&#39;</span><span class="p">,</span>
     <span class="p">}]</span>
 <span class="p">});</span>
 
@@ -364,7 +364,7 @@ Will return the given provider by the (browser) environment, otherwise <code cla
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">web3.js 1.0.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">web3.js 1.0.0 documentation</a> &#187;</li>
       </ul>
     </div>
     <div class="footer" role="contentinfo">

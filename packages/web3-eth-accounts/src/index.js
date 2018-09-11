@@ -75,12 +75,12 @@ var Accounts = function Accounts() {
         }),
         new Method({
             name: 'getGasPrice',
-            call: 'eth_gasPrice',
+            call: 'ess_gasPrice',
             params: 0
         }),
         new Method({
             name: 'getTransactionCount',
-            call: 'eth_getTransactionCount',
+            call: 'ess_getTransactionCount',
             params: 2,
             inputFormatter: [function (address) {
                 if (utils.isAddress(address)) {

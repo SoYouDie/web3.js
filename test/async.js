@@ -19,7 +19,7 @@ var tests = [{
     }, 'latest'],
     result: '0xb',
     formattedResult: '0xb',
-    call: 'eth_'+ method
+    call: 'ess_'+ method
 }];
 
 describe('async', function () {

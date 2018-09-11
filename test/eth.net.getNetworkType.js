@@ -48,7 +48,7 @@ describe('getNetworkType', function () {
             });
             provider.injectValidation(function (payload) {
                 assert.equal(payload.jsonrpc, '2.0');
-                assert.equal(payload.method, 'eth_getBlockByNumber');
+                assert.equal(payload.method, 'ess_getBlockByNumber');
                 assert.deepEqual(payload.params, ['0x0', false]);
             });
 

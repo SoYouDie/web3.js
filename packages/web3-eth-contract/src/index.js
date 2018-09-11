@@ -656,7 +656,7 @@ Contract.prototype.getPastEvents = function(){
 
     var getPastLogs = new Method({
         name: 'getPastLogs',
-        call: 'eth_getLogs',
+        call: 'ess_getLogs',
         params: 1,
         inputFormatter: [formatters.inputLogFormatter],
         outputFormatter: this._decodeEventABI.bind(subOptions.event)
@@ -777,10 +777,10 @@ Contract.prototype._executeMethod = function _executeMethod(){
 
         if(args.type === 'call') {
             payload.params.push(formatters.inputDefaultBlockNumberFormatter.call(this._parent, args.defaultBlock));
-            payload.method = 'eth_call';
+            payload.method = 'ess_call';
             payload.format = this._parent._decodeMethodReturn.bind(null, this._method.outputs);
         } else {
-            payload.method = 'eth_sendTransaction';
+            payload.method = 'ess_sendTransaction';
         }
 
         return payload;
@@ -792,7 +792,7 @@ Contract.prototype._executeMethod = function _executeMethod(){
 
                 var estimateGas = (new Method({
                     name: 'estimateGas',
-                    call: 'eth_estimateGas',
+                    call: 'ess_estimateGas',
                     params: 1,
                     inputFormatter: [formatters.inputCallFormatter],
                     outputFormatter: utils.hexToNumber,
@@ -810,7 +810,7 @@ Contract.prototype._executeMethod = function _executeMethod(){
 
                 var call = (new Method({
                     name: 'call',
-                    call: 'eth_call',
+                    call: 'ess_call',
                     params: 2,
                     inputFormatter: [formatters.inputCallFormatter, formatters.inputDefaultBlockNumberFormatter],
                     // add output formatter for decoding
@@ -884,7 +884,7 @@ Contract.prototype._executeMethod = function _executeMethod(){
 
                 var sendTransaction = (new Method({
                     name: 'sendTransaction',
-                    call: 'eth_sendTransaction',
+                    call: 'ess_sendTransaction',
                     params: 1,
                     inputFormatter: [formatters.inputTransactionFormatter],
                     requestManager: _this._parent._requestManager,

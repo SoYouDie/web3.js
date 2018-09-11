@@ -5,7 +5,7 @@ var method = 'getBlockNumber';
 var tests = [{
     result: '0xb',
     formattedResult: 11,
-    call: 'eth_blockNumber'
+    call: 'ess_blockNumber'
 }];
 
 
